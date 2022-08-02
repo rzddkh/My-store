@@ -1,0 +1,13 @@
+<div class="product-container">
+    <dl *ngFor="let item of items" class="list">
+        <dt>
+            <a routerLink="/{{item.id}}"><img src={{item.url}} alt={{item.name}} class="product-image"></a>
+            <p>{{item.name}}</p>
+            <p>$ {{item.price}}</p>
+            <select class="select-input">
+                <option *ngFor="let number of numbers">{{number}}</option>
+            </select>
+            <button class="button" role="button">Add to cart</button>
+        </dt>
+    </dl>
+</div>
