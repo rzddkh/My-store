@@ -1,5 +1,5 @@
 <div class="product-container">
-    <dl *ngFor="let item of items" class="list">
+    <dl *ngFor="let item of itemsChild" class="list">
         <dt>
             <a routerLink="/{{item.id}}"><img src={{item.url}} alt={{item.name}} class="product-image"></a>
             <p>{{item.name}}</p>

@@ -21,8 +21,6 @@
 }
 
 
-
-/* CSS */
 .button{
   align-items: center;
   background-color: #c4e1f5;
@@ -34,7 +32,7 @@
   display: flex;
   font-family: Inter,sans-serif;
   font-size: 16px;
-  height: 48px;
+  height: 30px;
   justify-content: center;
   line-height: 24px;
   max-width: 100%;
@@ -52,7 +50,7 @@
   border-radius: 8px;
   content: "";
   display: block;
-  height: 48px;
+  height: 30px;
   left: 0;
   width: 100%;
   position: absolute;

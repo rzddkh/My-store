@@ -2,14 +2,14 @@
     <div class="detail-item">
         <img src="{{item.url}}" alt="{{item.name}}">
         <p>{{item.name}}</p>
-        <p>{{item.price}}</p>
+        <p>$ {{item.price}}</p>
         <p>{{item.description}}</p>
         <select class="select-input">
             <option *ngFor="let number of numbers">{{number}}</option>
         </select>
-        <button>Add to cart</button>
+        <button class="button">Add to cart</button>
     </div>
     
-    <a routerLink="/">back to item list</a>
+    <a routerLink="/" class="button" style="background-color: #83bade;">back to items list</a>
 
 </div>
