@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Product } from 'src/app/types/product';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -15,5 +16,7 @@ export class ProductListComponent implements OnInit {
     const dataservice= new DataService;
     this.items=dataservice.getItems();
   }
+
+  
 
 }

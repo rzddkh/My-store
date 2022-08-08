@@ -7,7 +7,7 @@
             <select class="select-input">
                 <option *ngFor="let number of numbers">{{number}}</option>
             </select>
-            <button class="button" role="button">Add to cart</button>
+            <button class="button" role="button" (click)="addToCart(item)">Add to cart</button>
         </dt>
     </dl>
 </div>

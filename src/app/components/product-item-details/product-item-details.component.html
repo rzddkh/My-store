@@ -7,9 +7,9 @@
         <select class="select-input">
             <option *ngFor="let number of numbers">{{number}}</option>
         </select>
-        <button class="button">Add to cart</button>
+        <button class="button" (click)="addToCart(item)">Add to cart</button>
     </div>
-    
+
     <a routerLink="/" class="button" style="background-color: #83bade;">back to items list</a>
 
 </div>

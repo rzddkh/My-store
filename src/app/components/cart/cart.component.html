@@ -1,24 +1,15 @@
 <div class="cart-container">
-    
+
     <div class="cart-panel">
-        <div class="cart-item">
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+        <p *ngIf='!empty' class="empty-cart-message">The cart is empty</p>
+        <div *ngFor="let item of cart" class="cart-item">
+            <img src="{{item.url}}">
             <div class="cart-item-details">
-                <p>BackPack</p>
-                <p>$ 79.99</p>
+                <p>{{item.name}}</p>
+                <p>$ {{item.price}}</p>
                 <p>Amount</p>
-                <input  class="number-input" required type="text" >
+                <input class="number-input" required type="text">
             </div>
-        </div>
-        <div class="cart-item">
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
-            <div class="cart-item-details">
-                <p>BackPack</p>
-                <p>$ 79.99</p>
-                <p>Amount</p>
-                <input  class="number-input" required type="text" >
-            </div>
-       
         </div>
 
     </div>
@@ -29,14 +20,11 @@
             <p>Address</p>
             <input type="text" required>
             <p>Creadit card number</p>
-            <input type="text" minlength="16" maxlength="16" required >
-            <h4>Total: $199</h4>
-        <p class="empty-cart-message">we will never share your payment details with anyone else.</p>
-        <button class="button">Submit</button>
+            <input type="text" minlength="16" maxlength="16" placeholder="please enter 16 digits" required>
+            <h4></h4>
+            <p>we will never share your payment details with anyone else.</p>
+            <button class="button">Submit</button>
         </form>
     </div>
-   
+
 </div>
-
-
-
