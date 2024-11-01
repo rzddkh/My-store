@@ -6,33 +6,28 @@ import { AddToCartService } from 'src/app/services/add-to-cart.service';
 @Component({
   selector: 'app-product-item-details',
   templateUrl: './product-item-details.component.html',
-  styleUrls: ['./product-item-details.component.css']
+  styleUrls: ['./product-item-details.component.css'],
 })
 export class ProductItemDetailsComponent implements OnInit {
-  items!: Product[]
-  itemId!: number
+  items: Product[] = [];
+  itemId!: number;
   item!: Product;
-  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   count!: number;
-  constructor(private activatedRoute: ActivatedRoute, private cartService: AddToCartService) {
-
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cartService: AddToCartService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    let itemId!: number
-    this.activatedRoute.params.subscribe(params => {
-      itemId = (params['id']);
+    let itemId!: number;
+    this.activatedRoute.params.subscribe((params) => {
+      itemId = params['id'];
     });
-
-    const dataservice = new DataService;
-    this.items = dataservice.getItems();
-    this.item = this.items.filter(item => item.id == itemId)[0];
-
   }
-  
-  
+
   addToCart(product: Product) {
     this.cartService.addToCart(product);
   }
-
 }

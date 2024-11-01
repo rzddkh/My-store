@@ -9,14 +9,15 @@ import { Product } from 'src/app/types/product';
 })
 export class ProductListComponent implements OnInit {
   items!: Product[];
-  numbers: number[]=[1,2,3,4,5,6,7,8,9,10]
-  constructor() { }
+  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    const dataservice= new DataService;
-    this.items=dataservice.getItems();
+
+    this.items = this.dataService.getItems();
+
   }
 
-  
+
 
 }
