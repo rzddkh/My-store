@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/types/product';
-import { AddToCartService } from 'src/app/services/add-to-cart.service';
+import { Cart } from 'src/app/services/cart';
 @Component({
   selector: 'app-product-item-details',
   templateUrl: './product-item-details.component.html',
   styleUrls: ['./product-item-details.component.css'],
 })
 export class ProductItemDetailsComponent implements OnInit {
-  items: Product[] = [];
   itemId!: number;
   item!: Product;
+  items!: Product[];
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  count!: number;
+  count: number = 1;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private cartService: AddToCartService,
+    private cartService: Cart,
     private dataService: DataService
   ) {}
 
@@ -25,9 +25,12 @@ export class ProductItemDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       itemId = params['id'];
     });
+    this.dataService
+      .getItems()
+      .subscribe((res) => (this.item = res[itemId - 1]));
   }
 
-  addToCart(product: Product) {
-    this.cartService.addToCart(product);
+  addToCart(product: Product, count: number) {
+    this.cartService.addToCart(product, count);
   }
 }

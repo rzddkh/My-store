@@ -36,6 +36,15 @@ img {
   .cart-panel {
     margin-left: 50px;
     margin-right: 50px;
+  
+  }
+
+  .total{
+   
+    font-size: larger;
+    position:fixed;
+    bottom: 0;
+    text-align: center;
   }
   
   .empty-cart-message {

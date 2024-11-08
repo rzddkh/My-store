@@ -1,13 +1,37 @@
 <div class="product-container">
-    <dl *ngFor="let item of itemsChild" class="list">
-        <dt>
-            <a routerLink="/{{item.id}}"><img src={{item.url}} alt={{item.name}} class="product-image"></a>
-            <p>{{item.name}}</p>
-            <p>$ {{item.price}}</p>
-            <select class="select-input">
-                <option *ngFor="let number of numbers">{{number}}</option>
-            </select>
-            <button class="button" role="button" (click)="addToCart(item)">Add to cart</button>
-        </dt>
-    </dl>
+  <dl>
+    <form class="list">
+      <dt>
+        <a routerLink="/{{ itemsChild.id }}"
+          ><img
+            src="{{ itemsChild.url }}"
+            alt="{{ itemsChild.name }}"
+            class="product-image"
+        /></a>
+        <p>{{ itemsChild.name }}</p>
+        <p>$ {{ itemsChild.price }}</p>
+
+        <select
+          class="select-input"
+          [(ngModel)]="count"
+          [ngModelOptions]="{ standalone: true }"
+        >
+          <option
+            *ngFor="let number of numbers; let i = index"
+            [value]="number"
+          >
+            {{ number }}
+          </option>
+        </select>
+
+        <button
+          class="button"
+          role="button"
+          (click)="addToCart(itemsChild, count)"
+        >
+          Add to cart
+        </button>
+      </dt>
+    </form>
+  </dl>
 </div>

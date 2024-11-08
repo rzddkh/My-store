@@ -1,3 +1,4 @@
- 
-    <app-product-item [itemsChild]="items"></app-product-item>
- 
+<app-product-item
+  *ngFor="let item of items; let i = index"
+  [itemsChild]="item"
+></app-product-item>

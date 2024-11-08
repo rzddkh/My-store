@@ -1,15 +1,15 @@
 <div class="detail-container">
-    <div class="detail-item">
-        <img src="{{item.url}}" alt="{{item.name}}">
-        <p>{{item.name}}</p>
-        <p>$ {{item.price}}</p>
-        <p>{{item.description}}</p>
-        <select class="select-input">
-            <option *ngFor="let number of numbers">{{number}}</option>
-        </select>
-        <button class="button" (click)="addToCart(item)">Add to cart</button>
-    </div>
-
-    <a routerLink="/" class="button" style="background-color: #83bade;">back to items list</a>
-
+  <img class="img" src="{{ item.url }}" alt="{{ item.name }}" />
+  <div class="detail-item">
+    <p>{{ item.name }}</p>
+    <p>$ {{ item.price }}</p>
+    <p>{{ item.description }}</p>
+    <select name="count" [(ngModel)]="count" class="select-input">
+      <option *ngFor="let number of numbers">
+        {{ number }}
+      </option>
+    </select>
+    <button class="button" (click)="addToCart(item, count)">Add to cart</button>
+    <a routerLink="/" class="button">Back to items list</a>
+  </div>
 </div>

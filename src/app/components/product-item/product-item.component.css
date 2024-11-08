@@ -5,14 +5,18 @@
   margin: 6px 6px;
   border: 1px solid #33B5E5;
 }
-
+.list{
+  text-align: center;
+}
 .product-container {
-  margin-top: 64px;
-  display: flex;
+  margin-top: 62px;
+  margin-left: 6%;
+  display: inline-flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
 }
 
 .select-input {
@@ -43,6 +47,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  
 }
 
 .button:after {
