@@ -1,5 +1,5 @@
 img {
-    width: 100px;
+    width: 150px;
     border-radius: 10px;
   }
   
@@ -18,12 +18,15 @@ img {
     justify-content: center;
     flex-direction: column;
     align-items: left;
-    margin-left: 80px;
+    margin: 10px;
   }
   
   .number-input {
-    width: 80px;
+    width:20%;
+    height: fit-content;
     text-align: center;
+    margin: 10px;
+    
   }
   
   .cart-container {
@@ -34,23 +37,29 @@ img {
   }
   
   .cart-panel {
-    margin-left: 50px;
-    margin-right: 50px;
-  
+    margin:20px
   }
 
   .total{
-   
     font-size: larger;
-    position:fixed;
+    position:relative;
     bottom: 0;
     text-align: center;
+    background-color:#dafeff;
+    border-radius: 8px;
+    width :200px;
   }
-  
+  .input-btn{
+    display: flex;
+    height: auto;
+    
+  }
   .empty-cart-message {
     display: flex;
     justify-content: center;
-    margin-top: 64px;
+   margin: 20px;
+   
+    font-size: medium;
   }
 
   .button{
@@ -64,10 +73,9 @@ img {
     display: flex;
     font-family: Inter,sans-serif;
     font-size: 16px;
-    height: 48px;
+    margin: 10px;
     justify-content: center;
     line-height: 24px;
-    max-width: 100%;
     padding: 0 25px;
     position: relative;
     text-align: center;
@@ -82,7 +90,7 @@ img {
     border-radius: 8px;
     content: "";
     display: block;
-    height: 48px;
+    height: 30px;
     left: 0;
     width: 100%;
     position: absolute;
@@ -100,6 +108,8 @@ img {
     background-color: #dafeff;
     outline: 0;
   }
+
+ 
   
   .button:hover {
     outline: 0;

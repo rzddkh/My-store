@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { cartProduct, Product } from '../types/product';
+import { cartProduct, Product } from '../models/product';
 import * as _ from 'lodash';
 @Injectable({
   providedIn: 'root',
@@ -9,13 +9,16 @@ export class Cart {
   tracker: Array<Product> = [];
   count: number = 0;
   cartItem!: cartProduct;
+  customer!: string;
+  address!: string;
+  total!: number;
   constructor() {}
 
   getCart(): cartProduct[] {
     return this.cart;
   }
 
-  addToCart(product: Product, count: number) {
+  addToCart(product: Product, count: number): void {
     this.cartItem = { count, ...product };
     if (_.find(this.tracker, product)) {
       this.cart.forEach((e) => {
@@ -27,13 +30,16 @@ export class Cart {
       this.cart.push(this.cartItem);
       this.tracker.push(product);
     }
-
-    console.log(this.tracker);
   }
 
-  removeFromCart(product: cartProduct) {
-    const index = this.cart.indexOf(product);
+  removeFromCart(index: number): void {
+    //const index = this.cart.indexOf(product);
     this.cart.splice(index, 1);
-    return this.cart;
+    this.tracker.splice(index, 1);
+  }
+
+  clearCart(): void {
+    this.cart.length = 0;
+    this.tracker.length = 0;
   }
 }

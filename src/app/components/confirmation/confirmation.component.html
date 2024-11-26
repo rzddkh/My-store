@@ -1,1 +1,15 @@
-<p>confirmation works!</p>
+<div class="container">
+  <h1 class="title">Your order has been placed!</h1>
+  <div class="items">
+    <p>Thank you {{ this.name }}!</p>
+    <p>Your payment of ${{ this.total }} has been recieved.</p>
+    <p>Your order contains the following items:</p>
+    <ul *ngFor="let item of cart" class="list">
+      <li>{{ item.count }} {{ item.name }}</li>
+    </ul>
+    <p>Items will be shipped to:</p>
+    <p>{{ this.address }}</p>
+    <p>Please allow 1-3 bussiness day(s) for shipping.</p>
+  </div>
+  <button routerLink="/" class="button">Back to product list</button>
+</div>

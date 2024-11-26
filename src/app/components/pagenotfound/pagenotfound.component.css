@@ -1,34 +1,9 @@
-img {
-  list-style-type: none;
-  width: 290px;
-  padding: 20px;
-  margin: 6px 6px;
-  border: 1px solid #33B5E5;
-  }
-  
-  .select-input {
-    width: 108px; 
-    margin-bottom: 8px;
-  }
-  
-  .detail-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 64px;
-  }
-  
-  .detail-item {
-    margin-left: 128px;
-    margin-right: 128px;
-  }
-  
-  .back-link {
-    margin-top: 8px;
-    
-  }
+.notFound{
+    text-align: center;
+}
 
-  .button{
+
+.button{
     align-items: center;
     background-color: #c4e1f5;
     border: 2px solid #111;
@@ -36,23 +11,21 @@ img {
     box-sizing: border-box;
     color: #111;
     cursor: pointer;
-    display: flex;
+    
     font-family: Inter,sans-serif;
     font-size: 16px;
-    height: 30px;
+    margin: 10px;
     justify-content: center;
     line-height: 24px;
-    max-width: 100%;
     padding: 0 25px;
-    position: relative;
+    position:relative;
     text-align: center;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-  }
-  
-  .button:after {
+
+  }.button:after {
     background-color: #111;
     border-radius: 8px;
     content: "";
@@ -75,13 +48,10 @@ img {
     background-color: #dafeff;
     outline: 0;
   }
+
+ 
   
   .button:hover {
     outline: 0;
   }
-  
-  @media (min-width: 768px) {
-    .button {
-      padding: 0 40px;
-    }
-  }
+   

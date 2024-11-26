@@ -1,47 +1,67 @@
 <div class="cart-container">
   <div class="cart-panel">
-    <p *ngIf="!empty" class="empty-cart-message">The cart is empty</p>
-    <div *ngFor="let item of cart" class="cart-item">
+    <p *ngIf="empty" class="empty-cart-message">The cart is empty</p>
+    <div *ngFor="let item of cart; let i = index" class="cart-item">
       <img src="{{ item.url }}" />
       <div class="cart-item-details">
         <p>{{ item.name }}</p>
         <p>$ {{ item.price }}</p>
         <p>Amount</p>
-        <input
-          matInput
-          class="number-input"
-          required
-          type="text"
-          [defaultValue]="item.count"
-        />
+        <div class="input-btn">
+          <input
+            matInput
+            class="number-input"
+            required
+            type="text"
+            [defaultValue]="item.count"
+            [(ngModel)]="item.count"
+            (ngModelChange)="countChange(item.count, i)"
+            type="number"
+            min="0"
+          />
+
+          <button class="button" (click)="removeButton(i)">Remove</button>
+        </div>
       </div>
     </div>
     <div class="total">
-      <p>Total : $ {{ total() }}</p>
+      <p>Total : $ {{ cartTotal }}</p>
     </div>
   </div>
   <div>
-    <form class="form-margin">
+    <form #form="ngForm" (ngSubmit)="onSubmit()" class="form-margin">
       <p>Full name</p>
       <input
         required
-        placeholder="minimum 3 characters"
+        placeholder="(minimum 3 characters)"
         minlength="3"
         type="text"
+        [(ngModel)]="name"
+        name="name"
       />
       <p>Address</p>
-      <input type="text" required />
+      <input
+        [(ngModel)]="address"
+        placeholder="Address"
+        name="address"
+        type="text"
+        required
+      />
       <p>Creadit card number</p>
       <input
         type="text"
         minlength="16"
         maxlength="16"
-        placeholder="please enter 16 digits"
+        placeholder="(16 digits card number)"
         required
+        [(ngModel)]="creditCard"
+        name="creditcard"
       />
-      <h4></h4>
+
       <p>We will never share your payment information.</p>
-      <button class="button">Submit</button>
+      <button [disabled]="form.invalid" type="submit" class="button">
+        Submit
+      </button>
     </form>
   </div>
 </div>
