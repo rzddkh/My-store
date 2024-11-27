@@ -28,7 +28,7 @@
       <p>Total : $ {{ cartTotal }}</p>
     </div>
   </div>
-  <div>
+  <div *ngIf="_auth.isAuthenticated$ | async; else loginMessage">
     <form #form="ngForm" (ngSubmit)="onSubmit()" class="form-margin">
       <p>Full name</p>
       <input
@@ -64,4 +64,11 @@
       </button>
     </form>
   </div>
+  <ng-template #loginMessage>
+    <div>
+      <button class="button" (click)="_auth.loginWithPopup()">
+        Proceed to check out
+      </button>
+    </div>
+  </ng-template>
 </div>

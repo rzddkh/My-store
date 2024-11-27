@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { cartProduct, Product } from '../models/product';
+import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class Cart {
   customer!: string;
   address!: string;
   total!: number;
+  totalNumber = new BehaviorSubject(this.totalNumberOfItems());
   constructor() {}
 
   getCart(): cartProduct[] {
@@ -30,16 +32,28 @@ export class Cart {
       this.cart.push(this.cartItem);
       this.tracker.push(product);
     }
+    this.totalNumber.next(this.totalNumberOfItems());
   }
 
   removeFromCart(index: number): void {
     //const index = this.cart.indexOf(product);
     this.cart.splice(index, 1);
     this.tracker.splice(index, 1);
+    this.totalNumber.next(this.totalNumberOfItems());
   }
 
   clearCart(): void {
     this.cart.length = 0;
     this.tracker.length = 0;
+    this.totalNumber.next(this.totalNumberOfItems());
+  }
+  totalNumberOfItems(): number {
+    let total: number = 0;
+
+    this.cart.forEach((e) => {
+      total += +e.count;
+    });
+
+    return total;
   }
 }

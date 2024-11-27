@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/services/cart';
 import { cartProduct, Product } from 'src/app/models/product';
 import { Router } from '@angular/router';
-
+import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -15,14 +15,18 @@ export class CartComponent implements OnInit {
   address!: string;
   creditCard!: number;
   cartTotal!: number;
-  constructor(private cartService: Cart, private router: Router) {}
+  constructor(
+    private cartService: Cart,
+    private router: Router,
+    public _auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     //getting cart data using cartService
 
     this.cart = this.cartService.getCart();
 
-    //calculating the total for the cart using total funciton
+    //calculating the total for the cart using total function
     this.cartTotal = this.total();
 
     this.cart.length == 0 ? (this.empty = true) : (this.empty = false);
@@ -30,7 +34,7 @@ export class CartComponent implements OnInit {
 
   //calculates the total for the cart
   total(): number {
-    var total: number = 0;
+    let total: number = 0;
 
     this.cart.forEach((e) => {
       total += e.price * e.count;
@@ -43,14 +47,26 @@ export class CartComponent implements OnInit {
 
   countChange(item: number, index: number) {
     if (item == 0) {
-      console.log(item, index);
       this.cartService.removeFromCart(index);
+      //get total value after count changes
+      this.cartTotal = this.total();
+    }
+    //get total value after count changes
+    this.cartTotal = this.total();
+    this.cartService.totalNumber.next(this.cartService.totalNumberOfItems());
+    if (this.total() == 0) {
+      this.empty = true;
     }
   }
 
   // remove button function
   removeButton(index: number) {
     this.cartService.removeFromCart(index);
+    //get total value after count changes
+    this.cartTotal = this.total();
+    if (this.total() == 0) {
+      this.empty = true;
+    }
   }
 
   //submit button function

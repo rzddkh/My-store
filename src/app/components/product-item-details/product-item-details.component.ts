@@ -33,6 +33,7 @@ export class ProductItemDetailsComponent implements OnInit {
 
   addToCart(product: Product, count: number) {
     this.cartService.addToCart(product, count);
+
     if (count == 1) {
       alert(`${count} ${product.name} is added to the cart`);
     } else {

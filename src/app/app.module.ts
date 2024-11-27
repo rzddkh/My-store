@@ -11,6 +11,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { NavigationComponent } from './layout/navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,19 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     NavigationComponent,
     PagenotfoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    AuthModule.forRoot({
+      domain: 'dev-qzvq6ffzwtnni6yb.us.auth0.com',
+      clientId: 'x5oUifHi4hk6ZF7qZJRdbgmVEOn5AL6b',
+      authorizationParams: {
+        redirect_url: window.location.origin,
+      },
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
