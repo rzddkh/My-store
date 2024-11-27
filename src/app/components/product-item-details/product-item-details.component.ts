@@ -23,6 +23,7 @@ export class ProductItemDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //getting data from data service
     this.activatedRoute.params.subscribe((params) => {
       this.itemId = +params['id'];
     });

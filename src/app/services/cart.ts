@@ -36,7 +36,6 @@ export class Cart {
   }
 
   removeFromCart(index: number): void {
-    //const index = this.cart.indexOf(product);
     this.cart.splice(index, 1);
     this.tracker.splice(index, 1);
     this.totalNumber.next(this.totalNumberOfItems());

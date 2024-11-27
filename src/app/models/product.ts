@@ -1,3 +1,4 @@
+//product model
 export class Product {
   id!: number;
   name: string = '';
@@ -5,7 +6,7 @@ export class Product {
   url: string = '';
   description: string = '';
 }
-
+//items in cart model with their count
 export class cartProduct {
   count: number = 0;
   id!: number;
