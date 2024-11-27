@@ -1,6 +1,10 @@
 # MyStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+It is a front end of an e-commerce website for an imaginary store built using Angular.
+It can be combined with the previous project(store front api) as a full stack project.
+
+Auth0 has been implemented into this project so you can make your own username and password or sign in using popular social media or services such as Gmail, Facebook, etc.
+To place an order, you must sign in; without signing in you can only put items into the cart. You will give a confirmation after your order has been placed. Please do not enter creadit card information but you have to put minimum requirements for the form to be able to submit.
 
 ## Development server
 
