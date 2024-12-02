@@ -10,30 +10,30 @@ To place an order, you must sign in; without signing in you can only put items i
 
 ### Components:
 
-- Cart component:
+- Cart component: <br>
   It is responsible for showing the items that has been added to the cart, their prices and counts, form validation and submiting the order. It is data is provided by _cart service_.
 
-- Confirmation component:
+- Confirmation component:<br>
   It is responsible for showing the purchased items and their counts. It gives confirmation to the customer that their order has been accepted. It is data is provided by _cart service_.
 
-- Page not found component:
+- Page not found component:<br>
   It is responsible to inform the customer that the address that they have entered is not valid.
 
-- Product-item component:
+- Product-item component:<br>
   It is the child of _product-list_ component. It will show the items provided by the _product-list_ and add the items to the cart using _cart service_.
 
-- Product-item-details:
+- Product-item-details:<br>
   It will provide more information about each item. Items can be add to the cart in this component as well using _cart service_. It is data is provided by _data service_.
 
-- Product-list component:
+- Product-list component:<br>
   It is the parent component for _product-item_ and it provides item's data to the product-item component. This component gets its data from _data servic_.
 
 ### Services:
 
-- Cart service:
+- Cart service:<br>
   It is responible for adding and removing items from the cart, providing total number of items in the cart and providing data to any component that needs to manipulate the cart data.
 
-- Data service:
+- Data service:<br>
   It is responsible for providing the inital data to the application, such as item's name, picture, price, etc.
 
 ## Development server
