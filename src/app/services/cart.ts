@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { cartProduct, Product } from '../models/product';
 import { BehaviorSubject } from 'rxjs';
 import * as _ from 'lodash';

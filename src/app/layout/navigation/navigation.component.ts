@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
   constructor(private cartService: Cart, public _auth: AuthService) {}
 
   ngOnInit(): void {
-    //Changes the number of the items in the cart button in navigation bar
+    //updates the number of the items in the cart button in navigation bar
     this.cartService.totalNumber.subscribe((e) => (this.cartCount = e));
   }
 }

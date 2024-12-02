@@ -38,20 +38,37 @@
         type="text"
         [(ngModel)]="name"
         name="name"
+        #customerName="ngModel"
       />
+      <div *ngIf="customerName.invalid && customerName.dirty">
+        <br />
+        <div class="formValidator">Please enter minimum of 3 characters</div>
+      </div>
+
       <p>Address</p>
       <input
         [(ngModel)]="address"
         placeholder="Address"
         name="address"
+        minlength="10"
         type="text"
         required
+        #customerAddress="ngModel"
       />
+      <div>
+        <div
+          *ngIf="customerAddress.invalid && customerAddress.dirty"
+          class="formValidator"
+        >
+          Please enter minimum 10 characters
+        </div>
+      </div>
       <p>Credit card number</p>
       <input
-        #credit
-        type="text"
-        minlength="16"
+        #credit="ngModel"
+        type="number"
+        min="1000000000000000"
+        max="9999999999999999"
         maxlength="16"
         placeholder="(16 digits card number)"
         required
@@ -60,9 +77,23 @@
       />
 
       <p>We will never share your payment information.</p>
-      <button [disabled]="form.invalid" type="submit" class="button">
+      <div>
+        <div *ngIf="credit.invalid && credit.dirty" class="formValidator">
+          Creadit card number must be 16 digits
+        </div>
+      </div>
+
+      <button
+        *ngIf="form.valid"
+        [disabled]="form.invalid"
+        type="submit"
+        class="button"
+      >
         Submit
       </button>
+      <p *ngIf="form.invalid" class="formValidator">
+        Please enter correct values for input fields to submit your order
+      </p>
     </form>
   </div>
   <ng-template #loginMessage>

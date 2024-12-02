@@ -3,7 +3,18 @@ img {
     border-radius: 10px;
   }
   
-  .form-margin {
+  .form-margin {  
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
     margin-bottom: 12px;
   }
   
@@ -115,3 +126,11 @@ img {
     outline: 0;
   }
    
+
+
+.formValidator{
+  color:rgb(92, 182, 182);
+  border-color: #111;
+  font-style: italic;
+}
+

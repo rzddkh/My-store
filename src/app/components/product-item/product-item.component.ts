@@ -11,10 +11,7 @@ export class ProductItemComponent implements OnInit {
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   constructor(private cartService: Cart) {}
   count: number = 1;
-  trackByIdx(index: number, obj: Product): any {
-    console.log('used');
-    return obj.name;
-  }
+
   ngOnInit(): void {}
 
   addToCart(product: Product, count: number) {

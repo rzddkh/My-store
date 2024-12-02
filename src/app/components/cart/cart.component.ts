@@ -3,6 +3,7 @@ import { Cart } from 'src/app/services/cart';
 import { cartProduct, Product } from 'src/app/models/product';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -15,6 +16,14 @@ export class CartComponent implements OnInit {
   address!: string;
   creditCard!: number;
   cartTotal!: number;
+
+  //validating number input for creadit card
+
+  numberControl = new FormControl(null, [
+    Validators.required,
+    Validators.min(111111),
+  ]);
+
   constructor(
     private cartService: Cart,
     private router: Router,
@@ -43,10 +52,11 @@ export class CartComponent implements OnInit {
     return total;
   }
 
-  //item can be removed if the count goes to 0 in the UI
+  //item will be removed if the count goes to 0 in the UI
 
   countChange(item: number, index: number) {
     if (item == 0) {
+      alert(`${this.cart[index].name} removed from the cart`);
       this.cartService.removeFromCart(index);
       //get total value after count changes
       this.cartTotal = this.total();
@@ -61,7 +71,11 @@ export class CartComponent implements OnInit {
 
   // remove button function
   removeButton(index: number) {
+    alert(
+      `${this.cart[index].count} ${this.cart[index].name}/s removed from the cart`
+    );
     this.cartService.removeFromCart(index);
+
     //get total value after count changes
     this.cartTotal = this.total();
     if (this.total() == 0) {
