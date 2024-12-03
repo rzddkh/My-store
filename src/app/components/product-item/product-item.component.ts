@@ -7,10 +7,12 @@ import { Cart } from 'src/app/services/cart';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
-  // product information is recieved from parent component
+  // product information is received from parent component
   @Input() itemsChild!: Product;
+
   // Alert data is being  sent to parent component
   @Output() Alertevent = new EventEmitter();
+
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   constructor(private cartService: Cart) {}
   count: number = 1;
