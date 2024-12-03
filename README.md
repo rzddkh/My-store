@@ -82,7 +82,7 @@ ng serve
   It will provide more information about each item. Items can be add to the cart in this component as well using _cart service_. It is data is provided by _data service_.
 
 - Product-list component:<br>
-  It is the parent component for _product-item_ and it provides item's data to the _product-item_ component. This component gets its data from _data servic_.
+  It is the parent component for _product-item_ and it provides item's data to the _product-item_ component. This component gets its data from _data service_.
 
 ### Services:
 

@@ -16,4 +16,8 @@ export class ProductListComponent implements OnInit {
     this.dataService.getItems().subscribe((res) => (this.items = res));
     this.cart.getCart();
   }
+  // alert message is recieved from the child in the parent component
+  handleAlert(message: string) {
+    alert(message);
+  }
 }

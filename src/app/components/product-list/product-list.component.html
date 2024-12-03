@@ -1,4 +1,5 @@
 <app-product-item
+  (Alertevent)="handleAlert($event)"
   *ngFor="let item of items; let i = index"
   [itemsChild]="item"
 ></app-product-item>
