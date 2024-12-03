@@ -1,10 +1,15 @@
 # MyStore
 
-It is a front end of an e-commerce website for an imaginary store built using Angular.
-It can be combined with the previous project(store front api) as a full stack project.
+## Description
+
+It is a front end of an e-commerce website for an imaginary store. It is built using Angular.
+
+It can be combined with the (Store front api project) as a full stack project.
 
 Auth0 has been implemented into this project so you can make your own username and password or sign in using popular social media or services such as Gmail, Facebook, etc.
-To place an order, you must sign in; without signing in you can only put items into the cart. You will give a confirmation after your order has been placed. Please do not enter credit card information but you have to the put minimum requirements for the form to be able to submit.
+To place an order, you must sign in; without signing in you can only put items into the cart.
+
+You will give a confirmation after your order has been placed. Please do not enter real credit card information but you have to the put minimum requirements for the form to be able to submit and place an order.
 
 ## Components, Services and Flow of the application
 
@@ -26,7 +31,7 @@ To place an order, you must sign in; without signing in you can only put items i
   It will provide more information about each item. Items can be add to the cart in this component as well using _cart service_. It is data is provided by _data service_.
 
 - Product-list component:<br>
-  It is the parent component for _product-item_ and it provides item's data to the product-item component. This component gets its data from _data servic_.
+  It is the parent component for _product-item_ and it provides item's data to the _product-item_ component. This component gets its data from _data servic_.
 
 ### Services:
 
@@ -38,7 +43,7 @@ To place an order, you must sign in; without signing in you can only put items i
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+After installing dependencies using `npm install`. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
