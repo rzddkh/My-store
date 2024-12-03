@@ -1,15 +1,66 @@
 # MyStore
 
-## Description
+## Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+- [Components, Services and Flow of the application](#components-services-and-flow-of-the-application)
+  - [Components](#components)
+  - [Services](#services)
+- [Build](#build)
+- [Running unit tests](#running-unit-tests)
+- [Running end-to-end tests](#running-end-to-end-tests)
+- [Further help](#further-help)
+
+## About
 
 It is a front end of an e-commerce website for an imaginary store. It is built using Angular.
 
-It can be combined with the (Store front api project) as a full stack project.
-
-Auth0 has been implemented into this project so you can make your own username and password or sign in using popular social media or services such as Gmail, Facebook, etc.
-To place an order, you must sign in; without signing in you can only put items into the cart.
+It can be combined with the _(store front api project)_ as a full stack project.
 
 You will give a confirmation after your order has been placed. Please do not enter real credit card information but you have to the put minimum requirements for the form to be able to submit and place an order.
+
+## Getting Started
+
+### Prerequisites
+
+- npm
+
+```
+npm install npm@latest -g
+```
+
+- Auth0
+
+  Auth0 has been implemented into this project so you can make your own username and password or sign in using popular social media or services such as Gmail, Facebook, etc.
+
+  To place an order, you must sign in; without signing in you can only put items into the cart.
+
+### Installing
+
+Step by step intallation guide to run and test the project.
+
+1. Clone the repository:
+
+```
+git clone https://github.com/rzddkh/My-store.git
+```
+
+2. Install npm packages
+
+```
+npm install
+```
+
+3. Run the development server
+
+```
+ng serve
+```
+
+4. Navigate to `http://localhost:4200/`
 
 ## Components, Services and Flow of the application
 
@@ -40,14 +91,6 @@ You will give a confirmation after your order has been placed. Please do not ent
 
 - Data service:<br>
   It is responsible for providing the inital data to the application, such as item's name, picture, price, etc.
-
-## Development server
-
-After installing dependencies using `npm install`. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
